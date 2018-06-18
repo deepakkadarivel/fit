@@ -9,6 +9,9 @@ const appReducer = (state = appInitialState, action) => {
         case appActionTypes.SET_AGE:
             return state.set('age', action.age);
 
+        case appActionTypes.SET_HEIGHT_IN_CM:
+            return state.set('heightInCM', action.heightInCM);
+
         default:
             return state;
     }

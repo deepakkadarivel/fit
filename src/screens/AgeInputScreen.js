@@ -8,7 +8,7 @@ class AgeInputScreen extends Component {
     render() {
         return (
             <BackgroundImage>
-                <UserAgeContainer/>
+                <UserAgeContainer navigation={this.props.navigation}/>
             </BackgroundImage>
         );
     }

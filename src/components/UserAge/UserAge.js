@@ -26,8 +26,7 @@ class UserAge extends Component {
                     label={constants.CONTINUE}
                     onPress={() => {
                         this.props.setAge(this.state.age);
-                        console.log(this.state.age);
-                        console.log(this.props.age);
+                        this.props.navigation.push('HeightInput');
                     }}
                 />
             </View>

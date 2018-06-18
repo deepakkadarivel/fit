@@ -14,4 +14,11 @@ const setAge = (age) => {
     };
 };
 
-export { setGoal, setAge };
+const setHeightInCM = (heightInCM) => {
+    return {
+        type: appActionTypes.SET_HEIGHT_IN_CM,
+        heightInCM
+    };
+};
+
+export { setGoal, setAge, setHeightInCM };

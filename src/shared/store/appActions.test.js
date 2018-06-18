@@ -2,7 +2,7 @@ import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 
 import appActionTypes from './appActionTypes';
-import {setGoal, setAge} from './appActions';
+import {setGoal, setAge, setHeightInCM} from './appActions';
 import appInitialState from "./appInitialState";
 
 describe('appActions', () => {
@@ -14,6 +14,7 @@ describe('appActions', () => {
             goal: appInitialState.goal,
             selectedGoal: appInitialState.selectedGoal,
             age: appInitialState.age,
+            heightInCM: appInitialState.heightInCM,
         };
         store = mockStore(state);
     });
@@ -46,6 +47,20 @@ describe('appActions', () => {
         ];
 
         store.dispatch(setAge(age));
+
+        expect(store.getActions()).toEqual(expectedActions);
+    });
+
+    it(`Should set height in cm on ${appActionTypes.SET_HEIGHT_IN_CM} action`, () => {
+        const heightInCM = '24';
+        const expectedActions = [
+            {
+                type: appActionTypes.SET_HEIGHT_IN_CM,
+                heightInCM
+            }
+        ];
+
+        store.dispatch(setHeightInCM(heightInCM));
 
         expect(store.getActions()).toEqual(expectedActions);
     });
