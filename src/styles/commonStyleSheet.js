@@ -5,7 +5,7 @@ export default StyleSheet.create({
     container: {
         flex: 1,
         alignItems: "center",
-        justifyContent: "center"
+        justifyContent: "center",
     },
     question: {
         marginTop: 20,

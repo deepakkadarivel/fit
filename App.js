@@ -4,6 +4,7 @@ import BackgroundImage from "./src/components/BackgroundImage/BackgroundImage";
 import constants from "./src/shared/constants";
 import styles from "./appStyleSheet";
 import commonStyles from "./src/styles/commonStyleSheet";
+import GoalsListContainer from "./src/components/GoalsList/GoalsListContainer";
 
 export default class App extends React.Component {
     render() {
@@ -19,6 +20,7 @@ export default class App extends React.Component {
                 <Text
                     style={commonStyles.question}
                 >{constants.QUESTION_GOAL}</Text>
+                <GoalsListContainer/>
             </BackgroundImage>
         );
     }
