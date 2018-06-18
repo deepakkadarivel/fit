@@ -1,12 +1,12 @@
 import React, {Component} from "react";
 import {Text, View, Alert} from "react-native";
 import constants from "../../shared/constants";
-import styles from "./ageInputStyleSheet";
+import styles from "./userAgeStyleSheet";
 import CustomInput from "../CustomInput/CustomInput";
 import CustomButton from "../CustomButton/CustomButton";
 import PropTypes from 'prop-types';
 
-class AgeInput extends Component {
+class UserAge extends Component {
     state = {
         age: this.props.age,
     };
@@ -35,9 +35,9 @@ class AgeInput extends Component {
     }
 }
 
-AgeInput.propTypes = {
+UserAge.propTypes = {
     age: PropTypes.string,
     setAge: PropTypes.func,
 };
 
-export default AgeInput;
+export default UserAge;

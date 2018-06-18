@@ -1,14 +1,14 @@
 import React, {Component} from "react";
 import {Image, TouchableOpacity} from "react-native";
 import BackgroundImage from "../components/BackgroundImage/BackgroundImage";
-import AgeInputContainer from "../components/AgeInput/AgeInputContainer";
+import UserAgeContainer from "../components/UserAge/UserAgeContainer";
 
 class AgeInputScreen extends Component {
 
     render() {
         return (
             <BackgroundImage>
-                <AgeInputContainer/>
+                <UserAgeContainer/>
             </BackgroundImage>
         );
     }

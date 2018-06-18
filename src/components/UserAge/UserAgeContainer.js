@@ -1,7 +1,7 @@
 import {connect} from 'react-redux';
 import {setAge} from "../../shared/store/appActions";
 
-import AgeInput from './AgeInput';
+import UserAge from './UserAge';
 
 const mapStateToProps = state => {
     return {
@@ -17,9 +17,9 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-const AgeInputContainer = connect(
+const UserAgeContainer = connect(
     mapStateToProps,
     mapDispatchToProps
-)(AgeInput);
+)(UserAge);
 
-export default AgeInputContainer;
+export default UserAgeContainer;
