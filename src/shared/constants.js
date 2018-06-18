@@ -3,4 +3,5 @@ export default {
     QUESTION_GOAL: "What's your goal?",
     QUESTION_AGE: 'How old are you?',
     QUESTION_HEIGHT: 'How tall are you?',
+    CONTINUE: 'Continue',
 }
