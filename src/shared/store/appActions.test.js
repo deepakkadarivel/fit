@@ -1,12 +1,22 @@
-import configureStore from 'redux-mock-store';
+import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 
 import appActionTypes from './appActionTypes';
-import { setGoal } from './appActions';
+import {setGoal, setAge} from './appActions';
+import appInitialState from "./appInitialState";
 
 describe('appActions', () => {
     const middlewares = [thunk];
-    const store = configureStore(middlewares)();
+    // const store = configureStore(middlewares)();
+    const mockStore = configureMockStore(middlewares);
+    beforeEach(() => {
+        state = {
+            goal: appInitialState.goal,
+            selectedGoal: appInitialState.selectedGoal,
+            age: appInitialState.age,
+        };
+        store = mockStore(state);
+    });
 
     it(`Should set goal on ${appActionTypes.SET_GOAL} action`, () => {
         const goal = {
@@ -22,6 +32,20 @@ describe('appActions', () => {
         ];
 
         store.dispatch(setGoal(goal));
+
+        expect(store.getActions()).toEqual(expectedActions);
+    });
+
+    it(`Should set age on ${appActionTypes.SET_AGE} action`, () => {
+        const age = '24';
+        const expectedActions = [
+            {
+                type: appActionTypes.SET_AGE,
+                age
+            }
+        ];
+
+        store.dispatch(setAge(age));
 
         expect(store.getActions()).toEqual(expectedActions);
     });

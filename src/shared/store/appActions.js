@@ -7,4 +7,11 @@ const setGoal = (goal) => {
     };
 };
 
-export { setGoal };
+const setAge = (age) => {
+    return {
+        type: appActionTypes.SET_AGE,
+        age
+    };
+};
+
+export { setGoal, setAge };

@@ -1,9 +1,9 @@
 import React from "react";
-import { TextInput } from "react-native";
-import styles from "./userInputStyleSheet";
+import {TextInput, View} from "react-native";
+import styles from "./customInputStyleSheet";
 import PropTypes from 'prop-types';
 
-const UserTextInput = (props) => {
+const CustomTextInput = (props) => {
     return (
         <TextInput
             autoFocus={true}
@@ -12,15 +12,15 @@ const UserTextInput = (props) => {
             editable={true}
             maxLength={3}
             style={styles.input}
-            value={props.value}
-            onChangeText={age => props.onChange({age})}
+            value={props.inputValue}
+            onChangeText={age => props.onChange(age)}
         />
     );
 };
 
-UserTextInput.propTypes = {
-    value: PropTypes.string,
+CustomTextInput.propTypes = {
+    inputValue: PropTypes.string,
     onChange: TextInput.propTypes.onChangeText
 };
 
-export default UserTextInput;
+export default CustomTextInput;

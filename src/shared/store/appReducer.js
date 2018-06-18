@@ -6,6 +6,9 @@ const appReducer = (state = appInitialState, action) => {
         case appActionTypes.SET_GOAL:
             return state.set('selectedGoal', action.goal);
 
+        case appActionTypes.SET_AGE:
+            return state.set('age', action.age);
+
         default:
             return state;
     }

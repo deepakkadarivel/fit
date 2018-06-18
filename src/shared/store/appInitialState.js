@@ -20,6 +20,7 @@ const appInitialState = seamlessImmutable({
 
     ],
     selectedGoal: {},
+    age: '',
 });
 
 export default appInitialState;
