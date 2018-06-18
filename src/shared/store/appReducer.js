@@ -15,6 +15,12 @@ const appReducer = (state = appInitialState, action) => {
         case appActionTypes.SET_HEIGHT_IN_CM:
             return state.set('heightInCM', action.heightInCM);
 
+        case appActionTypes.SET_HEIGHT_IN_FT:
+            return state.set('heightInFT', action.heightInFT);
+
+        case appActionTypes.SET_HEIGHT_IN_IN:
+            return state.set('heightInIN', action.heightInIN);
+
         default:
             return state;
     }

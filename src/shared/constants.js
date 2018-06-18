@@ -7,4 +7,6 @@ export default {
     CM: 'Cm',
     FT: 'Ft',
     IN: 'In',
+    CM_TOGGLE_TITLE: 'CM',
+    FT_TOGGLE_TITLE: 'FT',
 }

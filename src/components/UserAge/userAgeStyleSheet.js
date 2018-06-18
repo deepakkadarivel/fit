@@ -7,6 +7,7 @@ export default StyleSheet.create({
         width: "100%",
         alignItems: "center",
         justifyContent: "flex-start",
+        backgroundColor: "white",
     },
     question: {
         marginTop: 26,

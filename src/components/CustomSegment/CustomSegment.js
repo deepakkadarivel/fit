@@ -9,19 +9,19 @@ class CustomSegment extends Component {
         return (
             <View style={styles.view}>
                 <TouchableOpacity
-                    style={this.props.isHeightInCM ? styles.buttonActiveLeft : styles.buttonInactive}
-                    onPress={this.props.toggleHeightInCM}
-                >
-                    <Text style={this.props.isHeightInCM ? styles.buttonTextWhite : styles.buttonTextBlack}>
-                        {constants.CM}
-                    </Text>
-                </TouchableOpacity>
-                <TouchableOpacity
-                    style={this.props.isHeightInCM ? styles.buttonInactive : styles.buttonActiveRight}
+                    style={this.props.isHeightInCM ? styles.buttonInactive : styles.buttonActiveLeft}
                     onPress={this.props.toggleHeightInCM}
                 >
                     <Text style={this.props.isHeightInCM ? styles.buttonTextBlack : styles.buttonTextWhite}>
-                        {constants.FT}
+                        {constants.FT_TOGGLE_TITLE}
+                    </Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                    style={this.props.isHeightInCM ? styles.buttonActiveRight : styles.buttonInactive}
+                    onPress={this.props.toggleHeightInCM}
+                >
+                    <Text style={this.props.isHeightInCM ? styles.buttonTextWhite : styles.buttonTextBlack}>
+                        {constants.CM_TOGGLE_TITLE}
                     </Text>
                 </TouchableOpacity>
             </View>

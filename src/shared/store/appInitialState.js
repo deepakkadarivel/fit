@@ -23,6 +23,8 @@ const appInitialState = seamlessImmutable({
     age: '',
     isHeightInCM: true,
     heightInCM: '',
+    heightInFT: '',
+    heightInIN: '',
 });
 
 export default appInitialState;

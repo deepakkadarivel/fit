@@ -20,6 +20,8 @@ describe('appReducer', () => {
             age: appInitialState.age,
             isHeightInCM: appInitialState.isHeightInCM,
             heightInCM: appInitialState.heightInCM,
+            heightInFT: appInitialState.heightInFT,
+            heightInIN: appInitialState.heightInIN,
         };
         const action = {
             type: appActionTypes.SET_GOAL,
@@ -39,6 +41,8 @@ describe('appReducer', () => {
             age: '24',
             isHeightInCM: appInitialState.isHeightInCM,
             heightInCM: appInitialState.heightInCM,
+            heightInFT: appInitialState.heightInFT,
+            heightInIN: appInitialState.heightInIN,
         };
         const action = {
             type: appActionTypes.SET_AGE,
@@ -56,6 +60,8 @@ describe('appReducer', () => {
             age: appInitialState.age,
             isHeightInCM: false,
             heightInCM: appInitialState.heightInCM,
+            heightInFT: appInitialState.heightInFT,
+            heightInIN: appInitialState.heightInIN,
         };
         const toggleAction = {
             type: appActionTypes.TOGGLE_HEIGHT_IN_CM
@@ -74,10 +80,54 @@ describe('appReducer', () => {
             age: appInitialState.age,
             isHeightInCM: appInitialState.isHeightInCM,
             heightInCM: '182',
+            heightInFT: appInitialState.heightInFT,
+            heightInIN: appInitialState.heightInIN,
         };
         const action = {
             type: appActionTypes.SET_HEIGHT_IN_CM,
             heightInCM
+        };
+        const reducerOutput = appReducer(appInitialState, action);
+
+        expect(reducerOutput).toEqual(expectedState);
+    });
+
+    it(`should handle ${appActionTypes.SET_HEIGHT_IN_FT}`, () => {
+        const heightInFT = '5';
+
+        const expectedState = {
+            goals: appInitialState.goals,
+            selectedGoal: appInitialState.selectedGoal,
+            age: appInitialState.age,
+            isHeightInCM: appInitialState.isHeightInCM,
+            heightInCM: appInitialState.heightInCM,
+            heightInFT: '5',
+            heightInIN: appInitialState.heightInIN,
+        };
+        const action = {
+            type: appActionTypes.SET_HEIGHT_IN_FT,
+            heightInFT
+        };
+        const reducerOutput = appReducer(appInitialState, action);
+
+        expect(reducerOutput).toEqual(expectedState);
+    });
+
+    it(`should handle ${appActionTypes.SET_HEIGHT_IN_IN}`, () => {
+        const heightInIN = '12';
+
+        const expectedState = {
+            goals: appInitialState.goals,
+            selectedGoal: appInitialState.selectedGoal,
+            age: appInitialState.age,
+            isHeightInCM: appInitialState.isHeightInCM,
+            heightInCM: appInitialState.heightInCM,
+            heightInFT: appInitialState.heightInFT,
+            heightInIN: '12',
+        };
+        const action = {
+            type: appActionTypes.SET_HEIGHT_IN_IN,
+            heightInIN
         };
         const reducerOutput = appReducer(appInitialState, action);
 

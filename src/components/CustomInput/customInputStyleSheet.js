@@ -15,7 +15,7 @@ export default StyleSheet.create({
     },
     inputWithNoBorder: {
         marginTop: 100,
-        width: "20%",
+        width: "30%",
         alignSelf: "center",
         textAlign: "center",
         height: 40,

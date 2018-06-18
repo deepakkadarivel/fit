@@ -7,6 +7,7 @@ export default StyleSheet.create({
         width: "100%",
         alignItems: "center",
         justifyContent: "flex-start",
+        backgroundColor: "white",
     },
     question: {
         marginTop: 26,
@@ -20,6 +21,12 @@ export default StyleSheet.create({
         alignItems: "flex-end",
         borderColor: "black",
         borderBottomWidth: 1,
+    },
+    inputFTView: {
+        width: "50%",
+        flexDirection: "row",
+        justifyContent: "space-evenly",
+        alignItems: "flex-end",
     },
     inputHint: {
         paddingBottom: 6,
