@@ -1,27 +1,17 @@
 import React from "react";
-import {Text, Image} from "react-native";
-import BackgroundImage from "./src/components/BackgroundImage/BackgroundImage";
-import constants from "./src/shared/constants";
-import styles from "./appStyleSheet";
-import commonStyles from "./src/styles/commonStyleSheet";
-import GoalsListContainer from "./src/components/GoalsList/GoalsListContainer";
+import {createStackNavigator} from 'react-navigation';
+import LandingScreen from "./src/screens/LandingScreen";
+import AgeInputScreen from "./src/screens/AgeInputScreen";
 
 export default class App extends React.Component {
     render() {
         return (
-            <BackgroundImage>
-                <Image
-                    style={styles.logo}
-                    source={require("./src/assets/icon8Logo.png")}
-                />
-                <Text
-                    style={styles.appTitle}
-                >{constants.APP_WELCOME_TEXT}</Text>
-                <Text
-                    style={commonStyles.question}
-                >{constants.QUESTION_GOAL}</Text>
-                <GoalsListContainer/>
-            </BackgroundImage>
+            <AppStackNavigator/>
         );
     }
 }
+
+const AppStackNavigator = createStackNavigator({
+    Landing: LandingScreen,
+    AgeInput: AgeInputScreen
+});

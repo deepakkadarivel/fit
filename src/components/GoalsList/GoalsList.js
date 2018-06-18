@@ -11,7 +11,7 @@ const GoalsList = (props) => {
     renderItem = ({item}) => {
         const setGoal = (item) => {
             props.setGoal(item);
-            Alert.alert(item.title);
+            props.navigation.push('AgeInput');
         };
 
         return (
