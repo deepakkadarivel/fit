@@ -4,4 +4,7 @@ export default {
     QUESTION_AGE: 'How old are you?',
     QUESTION_HEIGHT: 'How tall are you?',
     CONTINUE: 'Continue',
+    CM: 'Cm',
+    FT: 'Ft',
+    IN: 'In',
 }

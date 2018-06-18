@@ -17,10 +17,16 @@ class UserHeight extends Component {
                 <Text style={styles.question}>
                     {constants.QUESTION_HEIGHT}
                 </Text>
+                <View style={styles.inputView}>
                 <CustomInput
                     inputValue={this.state.heightInCM}
                     onChange={heightInCM => this.setState({heightInCM})}
+                    isHeightScreen={true}
                 />
+                    <Text style={styles.inputHint}>
+                        {constants.CM}
+                    </Text>
+                </View>
                 <CustomButton
                     label={constants.CONTINUE}
                     onPress={() => this.props.setHeightInCM(this.state.heightInCM)}

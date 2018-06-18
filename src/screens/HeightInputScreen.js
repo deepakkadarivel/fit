@@ -1,18 +1,15 @@
-import React, {Component} from "react";
+import React from "react";
 import {Image, TouchableOpacity} from "react-native";
 import BackgroundImage from "../components/BackgroundImage/BackgroundImage";
 import UserHeightContainer from "../components/UserHeight/UserHeightContainer";
 
-class HeightInputScreen extends Component {
-
-    render() {
-        return (
-            <BackgroundImage>
-                <UserHeightContainer/>
-            </BackgroundImage>
-        );
-    }
-}
+const HeightInputScreen = (props) => {
+    return (
+        <BackgroundImage>
+            <UserHeightContainer navigation={props.navigation}/>
+        </BackgroundImage>
+    );
+};
 
 HeightInputScreen.navigationOptions = ({navigation}) => ({
     headerLeft:

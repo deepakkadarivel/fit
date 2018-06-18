@@ -11,7 +11,7 @@ const CustomTextInput = (props) => {
             numberOfLines={1}
             editable={true}
             maxLength={3}
-            style={styles.input}
+            style={props.isHeightScreen ? styles.inputWithNoBorder : styles.input}
             value={props.inputValue}
             onChangeText={age => props.onChange(age)}
         />
@@ -20,7 +20,12 @@ const CustomTextInput = (props) => {
 
 CustomTextInput.propTypes = {
     inputValue: PropTypes.string,
-    onChange: TextInput.propTypes.onChangeText
+    onChange: TextInput.propTypes.onChangeText,
+    isHeightScreen: PropTypes.bool
+};
+
+CustomTextInput.defaultProps = {
+    isHeightScreen: false
 };
 
 export default CustomTextInput;

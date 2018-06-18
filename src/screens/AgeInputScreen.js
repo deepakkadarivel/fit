@@ -1,18 +1,15 @@
-import React, {Component} from "react";
+import React from "react";
 import {Image, TouchableOpacity} from "react-native";
 import BackgroundImage from "../components/BackgroundImage/BackgroundImage";
 import UserAgeContainer from "../components/UserAge/UserAgeContainer";
 
-class AgeInputScreen extends Component {
-
-    render() {
-        return (
-            <BackgroundImage>
-                <UserAgeContainer navigation={this.props.navigation}/>
-            </BackgroundImage>
-        );
-    }
-}
+const AgeInputScreen = (props) => {
+    return (
+        <BackgroundImage>
+            <UserAgeContainer navigation={props.navigation}/>
+        </BackgroundImage>
+    );
+};
 
 AgeInputScreen.navigationOptions = ({navigation}) => ({
     headerLeft:

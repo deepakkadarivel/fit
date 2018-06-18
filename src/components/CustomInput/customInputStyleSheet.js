@@ -12,5 +12,14 @@ export default StyleSheet.create({
         fontSize: 24,
         borderColor: "black",
         borderBottomWidth: 1,
+    },
+    inputWithNoBorder: {
+        marginTop: 100,
+        width: "20%",
+        alignSelf: "center",
+        textAlign: "center",
+        height: 40,
+        fontFamily: fonts.FiraSansBold,
+        fontSize: 24,
     }
 });
