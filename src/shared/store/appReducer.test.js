@@ -18,6 +18,7 @@ describe('appReducer', () => {
             goals: appInitialState.goals,
             selectedGoal: goal,
             age: appInitialState.age,
+            isHeightInCM: appInitialState.isHeightInCM,
             heightInCM: appInitialState.heightInCM,
         };
         const action = {
@@ -36,6 +37,7 @@ describe('appReducer', () => {
             goals: appInitialState.goals,
             selectedGoal: appInitialState.selectedGoal,
             age: '24',
+            isHeightInCM: appInitialState.isHeightInCM,
             heightInCM: appInitialState.heightInCM,
         };
         const action = {
@@ -47,6 +49,22 @@ describe('appReducer', () => {
         expect(reducerOutput).toEqual(expectedState);
     });
 
+    it(`should handle ${appActionTypes.TOGGLE_HEIGHT_IN_CM}`, () => {
+        const expectedState = {
+            goals: appInitialState.goals,
+            selectedGoal: appInitialState.selectedGoal,
+            age: appInitialState.age,
+            isHeightInCM: false,
+            heightInCM: appInitialState.heightInCM,
+        };
+        const toggleAction = {
+            type: appActionTypes.TOGGLE_HEIGHT_IN_CM
+        };
+        const reducerOutput = appReducer(appInitialState, toggleAction);
+
+        expect(reducerOutput).toEqual(expectedState);
+    });
+
     it(`should handle ${appActionTypes.SET_HEIGHT_IN_CM}`, () => {
         const heightInCM = '182';
 
@@ -54,6 +72,7 @@ describe('appReducer', () => {
             goals: appInitialState.goals,
             selectedGoal: appInitialState.selectedGoal,
             age: appInitialState.age,
+            isHeightInCM: appInitialState.isHeightInCM,
             heightInCM: '182',
         };
         const action = {

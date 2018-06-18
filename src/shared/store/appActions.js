@@ -14,6 +14,12 @@ const setAge = (age) => {
     };
 };
 
+const toggleHeightInCM = () => {
+    return {
+        type: appActionTypes.TOGGLE_HEIGHT_IN_CM,
+    };
+};
+
 const setHeightInCM = (heightInCM) => {
     return {
         type: appActionTypes.SET_HEIGHT_IN_CM,
@@ -21,4 +27,4 @@ const setHeightInCM = (heightInCM) => {
     };
 };
 
-export { setGoal, setAge, setHeightInCM };
+export { setGoal, setAge, toggleHeightInCM, setHeightInCM };

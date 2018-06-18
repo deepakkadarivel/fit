@@ -2,7 +2,7 @@ import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 
 import appActionTypes from './appActionTypes';
-import {setGoal, setAge, setHeightInCM} from './appActions';
+import {setGoal, setAge, setHeightInCM, toggleHeightInCM} from './appActions';
 import appInitialState from "./appInitialState";
 
 describe('appActions', () => {
@@ -47,6 +47,18 @@ describe('appActions', () => {
         ];
 
         store.dispatch(setAge(age));
+
+        expect(store.getActions()).toEqual(expectedActions);
+    });
+
+    it(`Should toggle height in cm on ${appActionTypes.TOGGLE_HEIGHT_IN_CM} action`, () => {
+        const expectedActions = [
+            {
+                type: appActionTypes.TOGGLE_HEIGHT_IN_CM,
+            }
+        ];
+
+        store.dispatch(toggleHeightInCM());
 
         expect(store.getActions()).toEqual(expectedActions);
     });

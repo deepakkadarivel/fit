@@ -21,6 +21,7 @@ const appInitialState = seamlessImmutable({
     ],
     selectedGoal: {},
     age: '',
+    isHeightInCM: true,
     heightInCM: '',
 });
 

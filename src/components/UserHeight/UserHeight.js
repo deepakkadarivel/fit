@@ -5,6 +5,7 @@ import styles from "./userHeightStyleSheet";
 import CustomInput from "../CustomInput/CustomInput";
 import CustomButton from "../CustomButton/CustomButton";
 import PropTypes from 'prop-types';
+import CustomSegmentContainer from "../CustomSegment/CustomSegmentContainer";
 
 class UserHeight extends Component {
     state = {
@@ -18,15 +19,16 @@ class UserHeight extends Component {
                     {constants.QUESTION_HEIGHT}
                 </Text>
                 <View style={styles.inputView}>
-                <CustomInput
-                    inputValue={this.state.heightInCM}
-                    onChange={heightInCM => this.setState({heightInCM})}
-                    isHeightScreen={true}
-                />
+                    <CustomInput
+                        inputValue={this.state.heightInCM}
+                        onChange={heightInCM => this.setState({heightInCM})}
+                        isHeightScreen={true}
+                    />
                     <Text style={styles.inputHint}>
                         {constants.CM}
                     </Text>
                 </View>
+                <CustomSegmentContainer/>
                 <CustomButton
                     label={constants.CONTINUE}
                     onPress={() => this.props.setHeightInCM(this.state.heightInCM)}
