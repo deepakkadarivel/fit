@@ -61,8 +61,10 @@ class UserHeight extends Component {
                         this.props.setHeightInCM(this.state.heightInCM);
                         this.props.setHeightInFT(this.state.heightInFT);
                         this.props.setHeightInIN(this.state.heightInIN);
+                        this.props.navigation.push('Confirmation');
                     }}
                     isHeightComponent={true}
+                    disabled={this.props.isHeightInCM ? !this.state.heightInCM : !(this.state.heightInFT && this.state.heightInIN)}
                 />
             </View>
         );

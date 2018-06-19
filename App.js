@@ -3,6 +3,7 @@ import {createStackNavigator} from 'react-navigation';
 import LandingScreen from "./src/screens/LandingScreen";
 import AgeInputScreen from "./src/screens/AgeInputScreen";
 import HeightInputScreen from "./src/screens/HeightInputScreen";
+import ConfirmationScreen from "./src/screens/ConfirmationScreen";
 
 export default class App extends React.Component {
     render() {
@@ -16,4 +17,5 @@ const AppStackNavigator = createStackNavigator({
     Landing: LandingScreen,
     AgeInput: AgeInputScreen,
     HeightInput: HeightInputScreen,
+    Confirmation: ConfirmationScreen,
 });

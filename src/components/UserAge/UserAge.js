@@ -12,7 +12,6 @@ class UserAge extends Component {
     };
 
     render() {
-        console.log(this.state.age);
         return (
             <View style={styles.container}>
                 <Text style={styles.question}>
@@ -28,6 +27,7 @@ class UserAge extends Component {
                         this.props.setAge(this.state.age);
                         this.props.navigation.push('HeightInput');
                     }}
+                    disabled={!this.state.age}
                 />
             </View>
         );

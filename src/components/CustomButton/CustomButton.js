@@ -6,8 +6,12 @@ import PropTypes from 'prop-types';
 const CustomButton = (props) => {
     return (
         <TouchableOpacity
-            style={props.isHeightComponent ? styles.buttonForHeightComponent : styles.button}
+            style={[
+                props.isHeightComponent ? styles.buttonForHeightComponent : styles.button,
+                props.disabled ? styles.buttonDisabled : styles.buttonActive,
+            ]}
             onPress={props.onPress}
+            disabled={props.disabled}
         >
             <Text style={styles.buttonText}>
                 {props.label}
@@ -23,7 +27,8 @@ CustomButton.propTypes = {
 };
 
 CustomButton.defaultProps = {
-    isHeightComponent: false
+    isHeightComponent: false,
+    disabled: false,
 };
 
 export default CustomButton;
