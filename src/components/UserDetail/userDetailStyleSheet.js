@@ -2,9 +2,17 @@ import {fonts} from "../../shared/fonts";
 import {StyleSheet} from "react-native";
 
 export default StyleSheet.create({
+    navLeft: {
+        position: 'absolute',
+        top: 30,
+        left:4
+    },
     container: {
         flex: 1,
         width: "100%",
+        marginTop: 60,
+        paddingLeft: 20,
+        paddingRight: 20,
         alignItems: "center",
         justifyContent: "flex-start",
     },
@@ -14,34 +22,32 @@ export default StyleSheet.create({
         fontSize: 24,
     },
     card: {
-        width: "90%",
+        width: "100%",
         marginTop: 40,
-        padding: 20,
         height: 200,
-        justifyContent: 'space-between',
+        justifyContent: 'space-evenly',
         borderColor: "#888888",
         borderWidth: 1,
-        borderRadius: 5,
+        borderRadius: 10,
         backgroundColor: 'white',
     },
     cardRow: {
+        padding: 20,
         flexDirection: "row",
-        width: "100%",
         justifyContent: "space-between",
-        borderColor: "#888888",
-        borderBottomWidth: 1,
     },
     title: {
-        marginBottom: 10,
         fontFamily: fonts.FiraSansRegular,
-        fontSize: 20,
+        fontSize: 16,
         color: "black",
     },
     value: {
-        marginBottom: 10,
         fontFamily: fonts.FiraSansRegular,
-        fontSize: 18,
+        fontSize: 16,
         color: "#444444",
-    }
-
+    },
+    border: {
+        borderColor: "#CCCCCC",
+        borderBottomWidth: 1,
+    },
 });

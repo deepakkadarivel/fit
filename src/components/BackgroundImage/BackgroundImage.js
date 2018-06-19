@@ -5,22 +5,9 @@ import PropTypes from 'prop-types';
 import constants from "../../shared/constants";
 
 const BackgroundImage = (props) => {
-    let source = '';
-    switch (props.sourceType) {
-        case constants.BackgroundSourceTypes.PARSLEY:
-            source = require("../../assets/imgParsley.png");
-            break;
-        case constants.BackgroundSourceTypes.BEANS:
-            source = require("../../assets/imgBeans.png");
-            break;
-        default:
-            source = require("../../assets/backgroundGrain.png");
-            break;
-    }
-
     return (
         <ImageBackground
-            source={source}
+            source={require("../../assets/backgroundGrain.png")}
             style={styles.container}
         >
             {props.children}
@@ -30,7 +17,6 @@ const BackgroundImage = (props) => {
 
 BackgroundImage.propTypes = {
     children: PropTypes.any,
-    sourceType: PropTypes.string,
 };
 
 export default BackgroundImage;

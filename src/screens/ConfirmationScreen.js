@@ -1,26 +1,24 @@
 import React from "react";
-import {Image, TouchableOpacity, Text} from "react-native";
+import {Image, TouchableOpacity} from "react-native";
 import UserDetailContainer from "../components/UserDetail/UserDetailContainer";
 import BackgroundImage from "../components/BackgroundImage/BackgroundImage";
-import constants from "../shared/constants";
+import styles from "../components/UserDetail/userDetailStyleSheet";
 
 const ConfirmationScreen = (props) => {
     return (
-        <BackgroundImage sourceType={constants.BackgroundSourceTypes.PARSLEY}>
+        <BackgroundImage>
             <UserDetailContainer/>
+            <TouchableOpacity
+                style={styles.navLeft}
+                onPress={() => props.navigation.goBack()}>
+                <Image source={require('../assets/icArrowLeft.png')}/>
+            </TouchableOpacity>
         </BackgroundImage>
     );
 };
 
-ConfirmationScreen.navigationOptions = ({navigation}) => ({
-    headerMode: 'none',
-    headerLeft:
-        <TouchableOpacity onPress={() => navigation.goBack()}>
-            <Image source={require('../assets/icArrowLeft.png')}/>
-        </TouchableOpacity>,
-    headerStyle: {
-        backgroundColor: 'white',
-    },
+ConfirmationScreen.navigationOptions = () => ({
+    header: null,
 });
 
 export default ConfirmationScreen;

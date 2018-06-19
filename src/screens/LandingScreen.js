@@ -10,6 +10,18 @@ export default LandingScreen = (props) => {
     return (
         <BackgroundImage>
             <Image
+                style={{position: 'absolute', left: 0}}
+                source={require("../assets/imgBeans.png")}
+            />
+            <Image
+                style={{position: 'absolute', right: 0, bottom: 0}}
+                source={require("../assets/imgMat.png")}
+            />
+            <Image
+                style={{position: 'absolute', right: 0, bottom: 20}}
+                source={require("../assets/imgDumbbell.png")}
+            />
+            <Image
                 style={styles.logo}
                 source={require("../assets/icon8Logo.png")}
             />

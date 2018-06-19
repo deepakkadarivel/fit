@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import {Text, View} from "react-native";
+import {Image, Text, View} from "react-native";
 import constants from "../../shared/constants";
 import styles from "./userDetailStyleSheet";
 import PropTypes from 'prop-types';
@@ -12,12 +12,22 @@ class UserDetail extends Component {
             `${this.props.heightInFT}${constants.FT} ${this.props.heightInIN}${constants.IN}`;
         return (
             <View style={styles.container}>
+
+                <Image
+                    style={{position: 'absolute', top: 0, right: 0}}
+                    source={require("../../assets/imgParsley.png")}
+                />
+                <Image
+                    style={{position: 'absolute', bottom: -150, left: 0}}
+                    source={require("../../assets/imgBeans.png")}
+                />
+
                 <Text style={styles.question}>
                     {constants.QUESTION_CONFIRM}
                 </Text>
 
                 <View style={styles.card}>
-                    <View style={styles.cardRow}>
+                    <View style={[styles.cardRow, styles.border]}>
                         <Text style={styles.title}>
                             {constants.GOAL}
                         </Text>
@@ -25,7 +35,7 @@ class UserDetail extends Component {
                             {this.props.selectedGoal.title}
                         </Text>
                     </View>
-                    <View style={styles.cardRow}>
+                    <View style={[styles.cardRow, styles.border]}>
                         <Text style={styles.title}>
                             {constants.AGE}
                         </Text>
@@ -48,7 +58,8 @@ class UserDetail extends Component {
                 <CustomButton
                     stye={{alignSelf: "flex-end"}}
                     label={constants.SAVE}
-                    onPress={() => {}}
+                    onPress={() => {
+                    }}
                 />
             </View>
         );
