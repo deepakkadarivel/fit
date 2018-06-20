@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import {View} from "react-native";
+import {Animated, View} from "react-native";
 import constants from "../../shared/constants";
 import styles from "./userDetailStyleSheet";
 import PropTypes from 'prop-types';
@@ -8,7 +8,38 @@ import CustomText from "../CustomText/CustomText";
 import textStyle from "../CustomText/customTextStyleSheet";
 
 class UserDetail extends Component {
+    state = {
+        viewOpacity: new Animated.Value(0),
+        viewTransform: new Animated.Value(100),
+    };
+
+    startAnimation = () => {
+        Animated.parallel([
+            Animated.timing(this.state.viewOpacity, {
+                toValue: 1,
+                duration: 1000,
+            }),
+            Animated.timing(this.state.viewTransform, {
+                toValue: 0,
+                duration: 1000,
+            }),
+        ]).start();
+
+    };
+
+    componentDidMount() {
+        this.startAnimation();
+    }
+
     render() {
+        const viewAnimatedStyle = {
+            opacity: this.state.viewOpacity,
+            transform: [
+                {
+                    translateY: this.state.viewTransform,
+                }
+            ]
+        };
         const height = this.props.isHeightInCM ?
             `${this.props.heightInCM} ${constants.CM}` :
             `${this.props.heightInFT} ${constants.FT} ${this.props.heightInIN} ${constants.IN}`;
@@ -16,7 +47,7 @@ class UserDetail extends Component {
             <View style={styles.container}>
                 <CustomText text={constants.QUESTION_CONFIRM} style={textStyle.question}/>
 
-                <View style={styles.card}>
+                <Animated.View style={[styles.card, viewAnimatedStyle]}>
                     <View style={[styles.cardRow, styles.border]}>
                         <CustomText text={constants.GOAL} style={textStyle.cardTitle}/>
                         <CustomText text={this.props.selectedGoal.title} style={textStyle.cardValue}/>
@@ -34,7 +65,7 @@ class UserDetail extends Component {
                     </View>
 
 
-                </View>
+                </Animated.View>
 
                 <CustomButton
                     stye={{alignSelf: "flex-end"}}
