@@ -15,13 +15,14 @@ class UserAge extends Component {
 
 
     render() {
+        let isValidInput = this.state.age >= 13 && this.state.age <= 120;
         return (
             <View style={styles.container}>
                 <CustomText text={constants.QUESTION_AGE} style={textStyle.question}/>
                 <CustomInput inputValue={this.state.age} onChange={age => this.setState({age})}/>
                 <CustomButton
                     label={constants.CONTINUE}
-                    disabled={!this.state.age}
+                    disabled={!isValidInput}
                     onPress={() => {
                         this.props.setAge(this.state.age);
                         this.props.navigation.push('HeightInput');

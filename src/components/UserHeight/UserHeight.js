@@ -11,40 +11,72 @@ import CustomText from "../CustomText/CustomText";
 import textStyle from "../CustomText/customTextStyleSheet";
 
 class UserHeight extends Component {
-    state = {
-        heightInCM: this.props.heightInCM,
-        heightInFT: this.props.heightInFT,
-        heightInIN: this.props.heightInIN,
+    constructor(props) {
+        super(props);
+        this.state = {
+            heightInCM: this.props.heightInCM,
+            heightInFT: this.props.heightInFT,
+            heightInIN: this.props.heightInIN,
+            isValidInput: this.validateInput.bind(this),
+        };
+        this.validateInput = this.validateInput.bind(this);
+        this.renderInputForCM = this.renderInputForCM.bind(this);
+        this.renderInputForFT = this.renderInputForFT.bind(this);
+        this.storeHeight = this.storeHeight.bind(this);
+    }
+
+    validateInput() {
+        if (this.props.isHeightInCM) {
+            const heightInCM = this.state.heightInCM;
+            return heightInCM >= 125 && heightInCM <= 301;
+        } else {
+            const heightInFT = this.state.heightInFT;
+            const heightInIN = this.state.heightInIN;
+            return (heightInFT >= 4 && heightInFT <= 10) && (heightInIN >= 1 && heightInIN <= 12)
+        }
     };
 
-    render() {
-        const setHeight = () => {
-            this.props.setHeight(
-                this.state.heightInCM,
-                this.state.heightInFT,
-                this.state.heightInIN
-            );
-            this.props.navigation.push('Confirmation');
-        };
+    renderInputForCM() {
+        return (
+            <InputHeightInCM
+                inputValue={this.state.heightInCM}
+                onChange={heightInCM => this.setState({heightInCM}, () => this.setState({isValidInput: this.validateInput()}))}
+            />
+        );
+    };
 
+    renderInputForFT() {
+        return (
+            <InputHeightInFT
+                heightInFT={this.state.heightInFT}
+                heightInIN={this.state.heightInIN}
+                onChangeFT={heightInFT => this.setState({heightInFT}, () => this.setState({isValidInput: this.validateInput()}))}
+                onChangeIN={heightInIN => this.setState({heightInIN}, () => this.setState({isValidInput: this.validateInput()}))}
+            />
+        );
+    };
+
+    storeHeight() {
+        this.props.setHeight(
+            this.state.heightInCM,
+            this.state.heightInFT,
+            this.state.heightInIN
+        );
+        this.props.navigation.push('Confirmation');
+    };
+
+
+    render() {
         return (
             <View style={styles.container}>
                 <CustomText text={constants.QUESTION_HEIGHT} style={textStyle.question}/>
-                {this.props.isHeightInCM && <InputHeightInCM
-                    inputValue={this.state.heightInCM}
-                    onChange={heightInCM => this.setState({heightInCM})}
-                />}
-                {!this.props.isHeightInCM && <InputHeightInFT
-                    heightInFT={this.state.heightInFT}
-                    heightInIN={this.state.heightInIN}
-                    onChangeFT={heightInFT => this.setState({heightInFT})}
-                    onChangeIN={heightInIN => this.setState({heightInIN})}
-                />}
+                {this.props.isHeightInCM && this.renderInputForCM()}
+                {!this.props.isHeightInCM && this.renderInputForFT()}
                 <CustomSegmentContainer/>
                 <CustomButton
                     label={constants.CONTINUE}
-                    disabled={this.props.isHeightInCM ? !this.state.heightInCM : !(this.state.heightInFT && this.state.heightInIN)}
-                    onPress={() => setHeight()}
+                    disabled={!this.state.isValidInput}
+                    onPress={() => this.storeHeight()}
                 />
             </View>
         );
