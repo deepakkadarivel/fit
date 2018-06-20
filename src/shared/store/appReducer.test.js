@@ -64,7 +64,8 @@ describe('appReducer', () => {
             heightInIN: appInitialState.heightInIN,
         };
         const toggleAction = {
-            type: appActionTypes.TOGGLE_HEIGHT_IN_CM
+            type: appActionTypes.TOGGLE_HEIGHT_IN_CM,
+            toggle: false,
         };
         const reducerOutput = appReducer(appInitialState, toggleAction);
 

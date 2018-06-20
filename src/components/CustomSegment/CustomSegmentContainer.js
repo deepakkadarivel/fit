@@ -11,8 +11,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        toggleHeightInCM: () => {
-            dispatch(toggleHeightInCM());
+        toggleHeightInCM: (toggle) => {
+            dispatch(toggleHeightInCM(toggle));
         }
     };
 };

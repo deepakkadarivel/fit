@@ -1,6 +1,6 @@
 import React from "react";
-import {Image, TouchableOpacity} from "react-native";
 import UserAgeContainer from "../components/UserAge/UserAgeContainer";
+import NavHandler from "../components/NavHandler/NavHandler";
 
 const AgeInputScreen = (props) => {
     return (
@@ -9,10 +9,7 @@ const AgeInputScreen = (props) => {
 };
 
 AgeInputScreen.navigationOptions = ({navigation}) => ({
-    headerLeft:
-        <TouchableOpacity onPress={() => navigation.goBack()}>
-            <Image source={require('../assets/icArrowLeft.png')}/>
-        </TouchableOpacity>,
+    headerLeft: <NavHandler navigation={navigation}/>,
     headerStyle: {
         backgroundColor: 'white',
     },

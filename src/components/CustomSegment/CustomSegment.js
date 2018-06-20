@@ -10,7 +10,7 @@ class CustomSegment extends Component {
             <View style={styles.view}>
                 <TouchableOpacity
                     style={this.props.isHeightInCM ? styles.buttonInactive : styles.buttonActiveLeft}
-                    onPress={this.props.toggleHeightInCM}
+                    onPress={() => this.props.toggleHeightInCM(false)}
                 >
                     <Text style={this.props.isHeightInCM ? styles.buttonTextBlack : styles.buttonTextWhite}>
                         {constants.FT_TOGGLE_TITLE}
@@ -18,7 +18,7 @@ class CustomSegment extends Component {
                 </TouchableOpacity>
                 <TouchableOpacity
                     style={this.props.isHeightInCM ? styles.buttonActiveRight : styles.buttonInactive}
-                    onPress={this.props.toggleHeightInCM}
+                    onPress={() => this.props.toggleHeightInCM(true)}
                 >
                     <Text style={this.props.isHeightInCM ? styles.buttonTextWhite : styles.buttonTextBlack}>
                         {constants.CM_TOGGLE_TITLE}

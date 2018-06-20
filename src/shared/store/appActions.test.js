@@ -55,10 +55,11 @@ describe('appActions', () => {
         const expectedActions = [
             {
                 type: appActionTypes.TOGGLE_HEIGHT_IN_CM,
+                toggle: true,
             }
         ];
 
-        store.dispatch(toggleHeightInCM());
+        store.dispatch(toggleHeightInCM(true));
 
         expect(store.getActions()).toEqual(expectedActions);
     });

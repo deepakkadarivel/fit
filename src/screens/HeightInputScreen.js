@@ -1,6 +1,6 @@
 import React from "react";
-import {Image, TouchableOpacity} from "react-native";
 import UserHeightContainer from "../components/UserHeight/UserHeightContainer";
+import NavHandler from "../components/NavHandler/NavHandler";
 
 const HeightInputScreen = (props) => {
     return (
@@ -9,10 +9,7 @@ const HeightInputScreen = (props) => {
 };
 
 HeightInputScreen.navigationOptions = ({navigation}) => ({
-    headerLeft:
-        <TouchableOpacity onPress={() => navigation.goBack()}>
-            <Image source={require('../assets/icArrowLeft.png')}/>
-        </TouchableOpacity>,
+    headerLeft: <NavHandler navigation={navigation}/>,
     headerStyle: {
         backgroundColor: 'white',
     },

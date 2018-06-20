@@ -1,5 +1,5 @@
 import React from "react";
-import {TextInput, View} from "react-native";
+import {TextInput} from "react-native";
 import styles from "./customInputStyleSheet";
 import PropTypes from 'prop-types';
 
@@ -11,7 +11,7 @@ const CustomTextInput = (props) => {
             numberOfLines={1}
             editable={true}
             maxLength={3}
-            style={props.isHeightScreen ? styles.inputWithNoBorder : styles.input}
+            style={[styles.input, props.extraStyle]}
             value={props.inputValue}
             onChangeText={age => props.onChange(age)}
         />
@@ -21,11 +21,7 @@ const CustomTextInput = (props) => {
 CustomTextInput.propTypes = {
     inputValue: PropTypes.string,
     onChange: TextInput.propTypes.onChangeText,
-    isHeightScreen: PropTypes.bool
-};
-
-CustomTextInput.defaultProps = {
-    isHeightScreen: false
+    extraStyle: PropTypes.any,
 };
 
 export default CustomTextInput;

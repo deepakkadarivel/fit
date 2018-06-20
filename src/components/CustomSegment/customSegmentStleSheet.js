@@ -5,7 +5,7 @@ export default StyleSheet.create({
     view: {
         width: "60%",
         height: 40,
-        marginTop:40,
+        marginTop:30,
         borderColor: "black",
         borderWidth: 1,
         borderRadius:30,

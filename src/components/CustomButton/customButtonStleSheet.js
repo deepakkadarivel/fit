@@ -6,22 +6,12 @@ export default StyleSheet.create({
         flex: 1,
         position: 'absolute',
         bottom: 20,
-
     },
     button: {
         paddingTop: 15,
         paddingRight: 25,
         paddingBottom: 15,
         paddingLeft: 25,
-        borderRadius: 50,
-    },
-    buttonForHeightComponent: {
-        marginTop: 40,
-        paddingTop: 15,
-        paddingRight: 25,
-        paddingBottom: 15,
-        paddingLeft: 25,
-        backgroundColor: 'black',
         borderRadius: 50,
     },
     buttonText: {

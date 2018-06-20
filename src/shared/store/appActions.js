@@ -14,9 +14,10 @@ const setAge = (age) => {
     };
 };
 
-const toggleHeightInCM = () => {
+const toggleHeightInCM = (toggle) => {
     return {
         type: appActionTypes.TOGGLE_HEIGHT_IN_CM,
+        toggle
     };
 };
 

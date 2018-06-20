@@ -2,11 +2,6 @@ import {fonts} from "../../shared/fonts";
 import {StyleSheet} from "react-native";
 
 export default StyleSheet.create({
-    navLeft: {
-        position: 'absolute',
-        top: 30,
-        left:4
-    },
     container: {
         flex: 1,
         width: "100%",
