@@ -18,10 +18,12 @@ class UserHeight extends Component {
     };
 
     render() {
-        const submitHeight = () => {
-            this.props.setHeightInCM(this.state.heightInCM);
-            this.props.setHeightInFT(this.state.heightInFT);
-            this.props.setHeightInIN(this.state.heightInIN);
+        const setHeight = () => {
+            this.props.setHeight(
+                this.state.heightInCM,
+                this.state.heightInFT,
+                this.state.heightInIN
+            );
             this.props.navigation.push('Confirmation');
         };
 
@@ -42,7 +44,7 @@ class UserHeight extends Component {
                 <CustomButton
                     label={constants.CONTINUE}
                     disabled={this.props.isHeightInCM ? !this.state.heightInCM : !(this.state.heightInFT && this.state.heightInIN)}
-                    onPress={() => submitHeight()}
+                    onPress={() => setHeight()}
                 />
             </View>
         );
@@ -54,9 +56,7 @@ UserHeight.propTypes = {
     heightInFT: PropTypes.string,
     heightInIN: PropTypes.string,
     isHeightInCM: PropTypes.bool.isRequired,
-    setHeightInCM: PropTypes.func,
-    setHeightInFT: PropTypes.func,
-    setHeightInIN: PropTypes.func,
+    setHeight: PropTypes.func,
 };
 
 export default UserHeight;

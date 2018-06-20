@@ -2,7 +2,7 @@ import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 
 import appActionTypes from './appActionTypes';
-import {setGoal, setAge, setHeightInCM, toggleHeightInCM, setHeightInIN, setHeightInFT} from './appActions';
+import {setAge, setGoal, setHeight, toggleHeightInCM} from './appActions';
 import appInitialState from "./appInitialState";
 
 describe('appActions', () => {
@@ -64,44 +64,21 @@ describe('appActions', () => {
         expect(store.getActions()).toEqual(expectedActions);
     });
 
-    it(`Should set height in cm on ${appActionTypes.SET_HEIGHT_IN_CM} action`, () => {
+    it(`Should set height in cm on ${appActionTypes.SET_HEIGHT} action`, () => {
         const heightInCM = '128';
-        const expectedActions = [
-            {
-                type: appActionTypes.SET_HEIGHT_IN_CM,
-                heightInCM
-            }
-        ];
-
-        store.dispatch(setHeightInCM(heightInCM));
-
-        expect(store.getActions()).toEqual(expectedActions);
-    });
-
-    it(`Should set height in ft on ${appActionTypes.SET_HEIGHT_IN_FT} action`, () => {
         const heightInFT = '5';
-        const expectedActions = [
-            {
-                type: appActionTypes.SET_HEIGHT_IN_FT,
-                heightInFT
-            }
-        ];
-
-        store.dispatch(setHeightInFT(heightInFT));
-
-        expect(store.getActions()).toEqual(expectedActions);
-    });
-
-    it(`Should set height in in on ${appActionTypes.SET_HEIGHT_IN_IN} action`, () => {
         const heightInIN = '12';
+
         const expectedActions = [
             {
-                type: appActionTypes.SET_HEIGHT_IN_IN,
+                type: appActionTypes.SET_HEIGHT,
+                heightInCM,
+                heightInFT,
                 heightInIN
             }
         ];
 
-        store.dispatch(setHeightInIN(heightInIN));
+        store.dispatch(setHeight(heightInCM, heightInFT, heightInIN));
 
         expect(store.getActions()).toEqual(expectedActions);
     });

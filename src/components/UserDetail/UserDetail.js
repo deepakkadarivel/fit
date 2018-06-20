@@ -10,8 +10,8 @@ import textStyle from "../CustomText/customTextStyleSheet";
 class UserDetail extends Component {
     render() {
         const height = this.props.isHeightInCM ?
-            `${this.props.heightInCM}${constants.CM}` :
-            `${this.props.heightInFT}${constants.FT} ${this.props.heightInIN}${constants.IN}`;
+            `${this.props.heightInCM} ${constants.CM}` :
+            `${this.props.heightInFT} ${constants.FT} ${this.props.heightInIN} ${constants.IN}`;
         return (
             <View style={styles.container}>
                 <CustomText text={constants.QUESTION_CONFIRM} style={textStyle.question}/>

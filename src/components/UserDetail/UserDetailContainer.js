@@ -1,5 +1,4 @@
 import {connect} from 'react-redux';
-import {setAge} from "../../shared/store/appActions";
 
 import UserDetail from './UserDetail';
 

@@ -1,5 +1,5 @@
 import {connect} from 'react-redux';
-import {setHeightInCM, setHeightInFT, setHeightInIN} from "../../shared/store/appActions";
+import {setHeight} from "../../shared/store/appActions";
 
 import UserHeight from './UserHeight';
 
@@ -14,14 +14,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        setHeightInCM: (heightInCM) => {
-            dispatch(setHeightInCM(heightInCM));
-        },
-        setHeightInFT: (heightInFT) => {
-            dispatch(setHeightInFT(heightInFT));
-        },
-        setHeightInIN: (heightInIN) => {
-            dispatch(setHeightInIN(heightInIN));
+        setHeight: (heightInCM, heightInFT, heightInIN) => {
+            dispatch(setHeight(heightInCM, heightInFT, heightInIN));
         },
     };
 };
