@@ -48,7 +48,7 @@ class LandingScreen extends Component {
             ]
         };
 
-        const welcomeTextStyle = {
+        const textAnimatedStyle = {
             opacity: this.state.textOpacity,
             transform: [
                 {
@@ -60,10 +60,10 @@ class LandingScreen extends Component {
         return (
             <Background isLandingScreen={true}>
                 <Animated.Image source={require("../assets/icon8Logo.png")} style={logoAnimatedStyle}/>
-                <Animated.View style={welcomeTextStyle}>
+                <Animated.View style={textAnimatedStyle}>
                     <CustomText text={constants.APP_WELCOME_TEXT} style={textStyle.appTitle}/>
                 </Animated.View>
-                <Animated.View style={welcomeTextStyle}>
+                <Animated.View style={textAnimatedStyle}>
                     <CustomText text={constants.QUESTION_GOAL} style={textStyle.question}/>
                 </Animated.View>
                 <GoalsListContainer navigation={this.props.navigation}/>
