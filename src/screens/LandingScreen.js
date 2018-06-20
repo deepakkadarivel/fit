@@ -35,7 +35,7 @@ class LandingScreen extends Component {
 
     };
 
-    componentWillMount() {
+    componentDidMount() {
         this.startAnimation();
     }
 

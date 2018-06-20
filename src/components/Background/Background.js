@@ -23,7 +23,7 @@ class Background extends Component {
 
     };
 
-    componentWillMount() {
+    componentDidMount() {
         this.startAnimation();
     }
 

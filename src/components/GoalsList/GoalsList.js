@@ -39,7 +39,7 @@ class GoalsList extends Component {
         ]).start();
     };
 
-    componentWillMount() {
+    componentDidMount() {
         this.startAnimation();
     }
 
