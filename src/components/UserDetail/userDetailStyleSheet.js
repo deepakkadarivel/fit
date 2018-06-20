@@ -1,4 +1,3 @@
-import {fonts} from "../../shared/fonts";
 import {StyleSheet} from "react-native";
 
 export default StyleSheet.create({
@@ -10,11 +9,6 @@ export default StyleSheet.create({
         paddingRight: 20,
         alignItems: "center",
         justifyContent: "flex-start",
-    },
-    question: {
-        marginTop: 26,
-        fontFamily: fonts.FiraSansBold,
-        fontSize: 24,
     },
     card: {
         width: "100%",
@@ -30,16 +24,6 @@ export default StyleSheet.create({
         padding: 20,
         flexDirection: "row",
         justifyContent: "space-between",
-    },
-    title: {
-        fontFamily: fonts.FiraSansRegular,
-        fontSize: 16,
-        color: "black",
-    },
-    value: {
-        fontFamily: fonts.FiraSansRegular,
-        fontSize: 16,
-        color: "#444444",
     },
     border: {
         borderColor: "#CCCCCC",

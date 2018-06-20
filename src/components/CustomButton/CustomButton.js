@@ -1,7 +1,9 @@
 import React from "react";
-import {KeyboardAvoidingView, Platform, Text, TouchableOpacity} from "react-native";
+import {KeyboardAvoidingView, Platform, TouchableOpacity} from "react-native";
 import styles from "./customButtonStleSheet";
 import PropTypes from 'prop-types';
+import textStyle from "../CustomText/customTextStyleSheet";
+import CustomText from "../CustomText/CustomText";
 
 const CustomButton = (props) => {
     const keyboardVerticalOffset = Platform.OS === 'ios' ? 80 : 0;
@@ -16,9 +18,11 @@ const CustomButton = (props) => {
                 onPress={props.onPress}
                 disabled={props.disabled}
             >
-                <Text style={styles.buttonText}>
-                    {props.label}
-                </Text>
+
+                <CustomText
+                    text={props.label}
+                    style={textStyle.buttonTextWhite}
+                />
             </TouchableOpacity>
         </KeyboardAvoidingView>
     );

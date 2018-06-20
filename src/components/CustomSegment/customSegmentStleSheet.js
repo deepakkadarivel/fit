@@ -36,16 +36,4 @@ export default StyleSheet.create({
         borderTopLeftRadius: 20,
         backgroundColor:'black',
     },
-    buttonTextBlack: {
-        textAlign:'center',
-        fontFamily: fonts.FiraSansMedium,
-        fontSize: 16,
-        color: "black",
-    },
-    buttonTextWhite: {
-        textAlign:'center',
-        fontFamily: fonts.FiraSansMedium,
-        fontSize: 16,
-        color: "white",
-    }
 });

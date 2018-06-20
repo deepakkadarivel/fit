@@ -8,9 +8,4 @@ export default StyleSheet.create({
         alignItems: "center",
         backgroundColor: "white",
     },
-    question: {
-        marginTop: 26,
-        fontFamily: fonts.FiraSansBold,
-        fontSize: 24,
-    }
 });

@@ -1,10 +1,12 @@
 import React, {Component} from "react";
-import {Text, View} from "react-native";
+import {View} from "react-native";
 import constants from "../../shared/constants";
 import styles from "./userAgeStyleSheet";
 import CustomInput from "../CustomInput/CustomInput";
 import CustomButton from "../CustomButton/CustomButton";
 import PropTypes from 'prop-types';
+import textStyle from "../CustomText/customTextStyleSheet";
+import CustomText from "../CustomText/CustomText";
 
 class UserAge extends Component {
     state = {
@@ -15,20 +17,15 @@ class UserAge extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <Text style={styles.question}>
-                    {constants.QUESTION_AGE}
-                </Text>
-                <CustomInput
-                    inputValue={this.state.age}
-                    onChange={age => this.setState({age})}
-                />
+                <CustomText text={constants.QUESTION_AGE} style={textStyle.question}/>
+                <CustomInput inputValue={this.state.age} onChange={age => this.setState({age})}/>
                 <CustomButton
                     label={constants.CONTINUE}
+                    disabled={!this.state.age}
                     onPress={() => {
                         this.props.setAge(this.state.age);
                         this.props.navigation.push('HeightInput');
                     }}
-                    disabled={!this.state.age}
                 />
             </View>
         );

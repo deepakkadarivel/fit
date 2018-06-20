@@ -1,14 +1,14 @@
 import React from "react";
 import UserDetailContainer from "../components/UserDetail/UserDetailContainer";
-import BackgroundImage from "../components/BackgroundImage/BackgroundImage";
+import Background from "../components/Background/Background";
 import NavHandler from "../components/NavHandler/NavHandler";
 
 const ConfirmationScreen = (props) => {
     return (
-        <BackgroundImage>
+        <Background isConfirmationScreen={true}>
             <UserDetailContainer/>
             <NavHandler navigation={props.navigation} isConfirmationScreen={true}/>
-        </BackgroundImage>
+        </Background>
     );
 };
 

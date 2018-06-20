@@ -28,13 +28,4 @@ export default StyleSheet.create({
         shadowOpacity: 0.3,
         shadowRadius: 5,
     },
-    title: {
-        fontFamily: fonts.FiraSansBold,
-        fontSize: 20,
-    },
-    description: {
-        marginTop: 10,
-        fontFamily: fonts.FiraSansRegular,
-        fontSize: 16,
-    }
 });

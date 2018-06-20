@@ -1,9 +1,11 @@
 import React from "react";
-import {Text, TextInput, View} from "react-native";
+import {TextInput, View} from "react-native";
 import PropTypes from 'prop-types';
 import constants from "../../shared/constants";
 import styles from "../CustomInput/customInputStyleSheet";
 import CustomInput from "../CustomInput/CustomInput";
+import textStyle from "../CustomText/customTextStyleSheet";
+import CustomText from "../CustomText/CustomText";
 
 const InputHeightInFT = (props) => {
     return (
@@ -14,9 +16,7 @@ const InputHeightInFT = (props) => {
                     onChange={heightInFT => props.onChangeFT(heightInFT)}
                     extraStyle={styles.inputWithNoBorder}
                 />
-                <Text style={styles.inputSuffix}>
-                    {constants.FT}
-                </Text>
+                <CustomText text={constants.FT} style={textStyle.inputSuffix}/>
             </View>
             <View style={styles.inputFTView}>
                 <CustomInput
@@ -24,9 +24,7 @@ const InputHeightInFT = (props) => {
                     onChange={heightInIN => props.onChangeIN(heightInIN)}
                     extraStyle={styles.inputWithNoBorder}
                 />
-                <Text style={styles.inputSuffix}>
-                    {constants.IN}
-                </Text>
+                <CustomText text={constants.IN} style={textStyle.inputSuffix}/>
             </View>
         </View>
     );

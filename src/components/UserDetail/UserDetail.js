@@ -1,9 +1,11 @@
 import React, {Component} from "react";
-import {Image, Text, View} from "react-native";
+import {View} from "react-native";
 import constants from "../../shared/constants";
 import styles from "./userDetailStyleSheet";
 import PropTypes from 'prop-types';
 import CustomButton from "../CustomButton/CustomButton";
+import CustomText from "../CustomText/CustomText";
+import textStyle from "../CustomText/customTextStyleSheet";
 
 class UserDetail extends Component {
     render() {
@@ -12,44 +14,23 @@ class UserDetail extends Component {
             `${this.props.heightInFT}${constants.FT} ${this.props.heightInIN}${constants.IN}`;
         return (
             <View style={styles.container}>
-
-                <Image
-                    style={{position: 'absolute', top: 0, right: 0}}
-                    source={require("../../assets/imgParsley.png")}
-                />
-                <Image
-                    style={{position: 'absolute', bottom: -150, left: 0}}
-                    source={require("../../assets/imgBeans.png")}
-                />
-
-                <Text style={styles.question}>
-                    {constants.QUESTION_CONFIRM}
-                </Text>
+                <CustomText text={constants.QUESTION_CONFIRM} style={textStyle.question}/>
 
                 <View style={styles.card}>
                     <View style={[styles.cardRow, styles.border]}>
-                        <Text style={styles.title}>
-                            {constants.GOAL}
-                        </Text>
-                        <Text style={styles.value}>
-                            {this.props.selectedGoal.title}
-                        </Text>
+                        <CustomText text={constants.GOAL} style={textStyle.cardTitle}/>
+                        <CustomText text={this.props.selectedGoal.title} style={textStyle.cardValue}/>
                     </View>
+
                     <View style={[styles.cardRow, styles.border]}>
-                        <Text style={styles.title}>
-                            {constants.AGE}
-                        </Text>
-                        <Text style={styles.value}>
-                            {this.props.age}
-                        </Text>
+                        <CustomText text={constants.AGE} style={textStyle.cardTitle}/>
+                        <CustomText text={this.props.age} style={textStyle.cardValue}
+                        />
                     </View>
+
                     <View style={styles.cardRow}>
-                        <Text style={styles.title}>
-                            {constants.HEIGHT}
-                        </Text>
-                        <Text style={styles.value}>
-                            {height}
-                        </Text>
+                        <CustomText text={constants.HEIGHT} style={textStyle.cardTitle}/>
+                        <CustomText text={height} style={textStyle.cardValue}/>
                     </View>
 
 

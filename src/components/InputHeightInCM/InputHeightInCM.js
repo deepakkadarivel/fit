@@ -1,9 +1,11 @@
 import React from "react";
-import {Text, TextInput, View} from "react-native";
+import {TextInput, View} from "react-native";
 import PropTypes from 'prop-types';
 import constants from "../../shared/constants";
 import styles from "../CustomInput/customInputStyleSheet";
 import CustomInput from "../CustomInput/CustomInput";
+import textStyle from "../CustomText/customTextStyleSheet";
+import CustomText from "../CustomText/CustomText";
 
 const InputHeightInCM = (props) => {
     return (
@@ -13,9 +15,10 @@ const InputHeightInCM = (props) => {
                 onChange={age => props.onChange(age)}
                 extraStyle={styles.inputWithNoBorder}
             />
-            <Text style={styles.inputSuffix}>
-                {constants.CM}
-            </Text>
+            <CustomText
+                text={constants.CM}
+                style={textStyle.inputSuffix}
+            />
         </View>
     );
 };

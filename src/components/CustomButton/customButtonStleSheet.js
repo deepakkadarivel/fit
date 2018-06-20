@@ -14,12 +14,6 @@ export default StyleSheet.create({
         paddingLeft: 25,
         borderRadius: 50,
     },
-    buttonText: {
-        textAlign: 'center',
-        fontFamily: fonts.FiraSansMedium,
-        fontSize: 16,
-        color: "white",
-    },
     buttonActive: {
         backgroundColor: 'black',
     },

@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import {Text, View} from "react-native";
+import {View} from "react-native";
 import constants from "../../shared/constants";
 import styles from "./userHeightStyleSheet";
 import CustomButton from "../CustomButton/CustomButton";
@@ -7,6 +7,8 @@ import PropTypes from 'prop-types';
 import CustomSegmentContainer from "../CustomSegment/CustomSegmentContainer";
 import InputHeightInCM from "../InputHeightInCM/InputHeightInCM";
 import InputHeightInFT from "../InputHeightInFT/InputHeightInFT";
+import CustomText from "../CustomText/CustomText";
+import textStyle from "../CustomText/customTextStyleSheet";
 
 class UserHeight extends Component {
     state = {
@@ -25,9 +27,7 @@ class UserHeight extends Component {
 
         return (
             <View style={styles.container}>
-                <Text style={styles.question}>
-                    {constants.QUESTION_HEIGHT}
-                </Text>
+                <CustomText text={constants.QUESTION_HEIGHT} style={textStyle.question}/>
                 {this.props.isHeightInCM && <InputHeightInCM
                     inputValue={this.state.heightInCM}
                     onChange={heightInCM => this.setState({heightInCM})}

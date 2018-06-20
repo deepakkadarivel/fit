@@ -1,7 +1,9 @@
 import React from "react";
-import {Alert, FlatList, Text, View, Image, TouchableOpacity} from "react-native";
+import {FlatList, Image, TouchableOpacity, View} from "react-native";
 import PropTypes from 'prop-types';
 import styles from './goalsStyleSheet';
+import textStyle from "../CustomText/customTextStyleSheet";
+import CustomText from "../CustomText/CustomText";
 
 const extractKey = ({id}) => id;
 
@@ -15,17 +17,11 @@ const GoalsList = (props) => {
         };
 
         return (
-            <TouchableOpacity
-                onPress={() => setGoal(item)}
-            >
+            <TouchableOpacity onPress={() => setGoal(item)}>
                 <View style={styles.row}>
                     <View>
-                        <Text style={styles.title}>
-                            {item.title}
-                        </Text>
-                        <Text style={styles.description}>
-                            {item.description}
-                        </Text>
+                        <CustomText text={item.title} style={textStyle.goalTitle}/>
+                        <CustomText text={item.description} style={textStyle.goalDescription}/>
                     </View>
                     <Image
                         source={require('../../assets/chevronRight.png')}

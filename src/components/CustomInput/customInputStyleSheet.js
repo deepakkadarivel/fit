@@ -31,10 +31,4 @@ export default StyleSheet.create({
         width: "30%",
         borderBottomWidth: 0,
     },
-    inputSuffix: {
-        paddingBottom: 6,
-        fontFamily: fonts.FiraSansRegular,
-        fontSize: 16,
-        color: "grey",
-    },
 });
