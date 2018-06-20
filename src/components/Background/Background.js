@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import {Animated, Image, ImageBackground} from "react-native";
+import {Animated, ImageBackground} from "react-native";
 import styles from "./backgroundStyleSheet";
 import PropTypes from 'prop-types';
 
@@ -45,16 +45,21 @@ class Background extends Component {
         return (
             <ImageBackground source={require("../../assets/backgroundGrain.png")} style={styles.container}>
                 {this.props.isLandingScreen &&
-                <Animated.Image style={[styles.landingBeanImage, slideInRightAnimatedStyle]} source={require("../../assets/imgBeans.png")}/>}
+                <Animated.Image style={[styles.landingBeanImage, slideInRightAnimatedStyle]}
+                                source={require("../../assets/imgBeans.png")}/>}
                 {this.props.isLandingScreen &&
-                <Animated.Image style={[styles.landingMatImage, slideInLeftAnimatedStyle]} source={require("../../assets/imgMat.png")}/>}
+                <Animated.Image style={[styles.landingMatImage, slideInLeftAnimatedStyle]}
+                                source={require("../../assets/imgMat.png")}/>}
                 {this.props.isLandingScreen &&
-                <Animated.Image style={[styles.landingDumbbellImage, slideInLeftAnimatedStyle]} source={require("../../assets/imgDumbbell.png")}/>}
+                <Animated.Image style={[styles.landingDumbbellImage, slideInLeftAnimatedStyle]}
+                                source={require("../../assets/imgDumbbell.png")}/>}
 
                 {this.props.isConfirmationScreen &&
-                <Animated.Image style={[styles.confirmationParsleyImage, slideInLeftAnimatedStyle]} source={require("../../assets/imgParsley.png")}/>}
+                <Animated.Image style={[styles.confirmationParsleyImage, slideInLeftAnimatedStyle]}
+                                source={require("../../assets/imgParsley.png")}/>}
                 {this.props.isConfirmationScreen &&
-                <Animated.Image style={[styles.confirmationBeanImage, slideInRightAnimatedStyle]} source={require("../../assets/imgBeans.png")}/>}
+                <Animated.Image style={[styles.confirmationBeanImage, slideInRightAnimatedStyle]}
+                                source={require("../../assets/imgBeans.png")}/>}
 
                 {this.props.children}
             </ImageBackground>

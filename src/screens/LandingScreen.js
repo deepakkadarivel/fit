@@ -23,13 +23,13 @@ class LandingScreen extends Component {
             Animated.parallel([
                 Animated.timing(this.state.textOpacity, {
                     toValue: 1,
-                    duration: 500,
+                    duration: 200,
                 }),
                 Animated.timing(this.state.textTransform, {
                     toValue: 0,
-                    duration: 500,
+                    duration: 200,
                 }),
-                Animated.delay(1000)
+                Animated.delay(100)
             ]),
         ]).start();
 
