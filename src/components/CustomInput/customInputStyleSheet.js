@@ -11,11 +11,11 @@ export default StyleSheet.create({
         borderBottomWidth: 1,
     },
     input: {
-        marginTop: 100,
+        marginTop: 60,
         width: "80%",
         alignSelf: "center",
         textAlign: "center",
-        height: 40,
+        height: 48,
         fontFamily: fonts.FiraSansBold,
         fontSize: 24,
         borderColor: "black",

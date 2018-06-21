@@ -6,7 +6,7 @@ import textStyle from "../CustomText/customTextStyleSheet";
 import CustomText from "../CustomText/CustomText";
 
 const CustomButton = (props) => {
-    const keyboardVerticalOffset = Platform.OS === 'ios' ? 80 : 0;
+    const keyboardVerticalOffset = Platform.OS === 'ios' ? 80 : -160;
     return (
         <KeyboardAvoidingView style={styles.keyboardView} behavior="padding" enabled
                               keyboardVerticalOffset={keyboardVerticalOffset}>

@@ -14,6 +14,7 @@ const CustomTextInput = (props) => {
             style={[styles.input, props.extraStyle]}
             value={props.inputValue}
             onChangeText={age => props.onChange(age)}
+            underlineColorAndroid={'transparent'}
         />
     );
 };
