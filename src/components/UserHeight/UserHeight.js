@@ -29,8 +29,14 @@ class UserHeight extends Component {
         }
     };
 
-    componentWillMount() {
+    componentDidMount() {
         this.validateInput();
+    }
+
+    componentDidUpdate(prevProps) {
+        if (prevProps.isHeightInCM !== this.props.isHeightInCM) {
+            this.validateInput();
+        }
     }
 
     renderInputForCM = () => {
